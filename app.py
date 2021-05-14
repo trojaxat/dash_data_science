@@ -7,7 +7,7 @@ import os
 CURR_DIR = os.path.dirname(os.path.realpath(__file__))
 
 # Hosted
-data = pd.read_csv(CURR_DIR + "\\avocado.csv", sep=',')
+data = pd.read_csv(CURR_DIR + "/avocado.csv", sep=',')
 
 # # Local
 # data = pd.read_csv(BASE_DIR + "dash_data_science/avocado.csv", sep=',')
