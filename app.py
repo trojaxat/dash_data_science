@@ -2,9 +2,10 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
+import os
 
-
-data = pd.read_csv("spiced_projects\\project1\\avocado.csv", sep=',')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+data = pd.read_csv(BASE_DIR + "\\dash_data_science\\avocado.csv", sep=',')
 
 data = data.query("type == 'conventional' and region == 'Albany'")
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
