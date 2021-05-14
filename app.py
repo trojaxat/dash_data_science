@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-data = pd.read_csv(BASE_DIR + "\\dash_data_science\\avocado.csv", sep=',')
+data = pd.read_csv(BASE_DIR + "/dash_data_science/avocado.csv", sep=',')
 
 data = data.query("type == 'conventional' and region == 'Albany'")
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
