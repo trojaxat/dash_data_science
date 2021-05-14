@@ -4,8 +4,13 @@ import dash_html_components as html
 import pandas as pd
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-data = pd.read_csv(BASE_DIR + "dash_data_science/avocado.csv", sep=',')
+CURR_DIR = os.path.dirname(os.path.realpath(__file__))
+
+# Hosted
+data = pd.read_csv(CURR_DIR + "\\avocado.csv", sep=',')
+
+# # Local
+# data = pd.read_csv(BASE_DIR + "dash_data_science/avocado.csv", sep=',')
 
 data = data.query("type == 'conventional' and region == 'Albany'")
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
