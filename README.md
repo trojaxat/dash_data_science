@@ -1,1 +1,1 @@
-# dash_data_science-master
+# Dash data science
