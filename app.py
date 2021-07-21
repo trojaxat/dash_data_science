@@ -7,7 +7,7 @@ import os
 CURR_DIR = os.path.dirname(os.path.realpath(__file__))
 avocadePath = os.path.join(CURR_DIR, "avocado.csv")
 
-# Hosted
+# This is a test to see if I can push
 data = pd.read_csv(avocadePath, sep=',')
 
 data = data.query("type == 'conventional' and region == 'Albany'")
