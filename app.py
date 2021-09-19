@@ -5,15 +5,15 @@ import dash_html_components as html
 import pandas as pd
 import os
 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn import svm, datasets
-from sklearn import metrics
-from sklearn.metrics import precision_recall_curve
-from sklearn.metrics import plot_precision_recall_curve
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.metrics import average_precision_score
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LogisticRegression
+# from sklearn import svm, datasets
+# from sklearn import metrics
+# from sklearn.metrics import precision_recall_curve
+# from sklearn.metrics import plot_precision_recall_curve
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.svm import SVC
+# from sklearn.metrics import average_precision_score
 
 CURR_DIR = os.path.dirname(os.path.realpath(__file__))
 avocadePath = os.path.join(CURR_DIR, "avocado.csv")
