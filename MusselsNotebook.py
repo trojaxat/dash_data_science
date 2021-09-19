@@ -26,7 +26,11 @@ df["extinktion_differenz"] = [
 df["extinktion_korrigiert"] = [
     x.replace(',', '.') for x in df["extinktion_korrigiert"]]
 
-
+sns.heatmap(df.corr(), cmap='coolwarm')
+plt.show()
+quit
+sns.jointplot(x=df['volumen'], y=df['parasiten_gesamt'], data=df, kind='reg')
+sns.pairplot(df)
 sns.scatterplot(data=df, x="volumen", y="parasiten_gesamt", hue="zone")
 
 
