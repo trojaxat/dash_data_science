@@ -1,11 +1,13 @@
 import dash
 from dash import dcc
+from dash import html
 import plotly.express as px
 import plotly.graph_objects as go
-from dash import html
 import pandas as pd
 import os
 from plotly.subplots import make_subplots
+import dash_html_components as html
+import base64
 # from sklearn.model_selection import train_test_split
 # from sklearn.linear_model import LogisticRegression
 # from sklearn import svm, datasets
@@ -49,7 +51,11 @@ figMain = px.scatter(df, x="volumen", y="parasiten_gesamt", color="zone")
 figDist = px.histogram(df, x="volumen", y="parasiten_gesamt",
                        color="zone", marginal="box", hover_data=df.columns)
 
+image_filename = 'plots\scatter.png'  # replace with your own image
+# encoded_image = base64.b64encode(open(image_filename, 'rb').read())
+
 app = dash.Dash(__name__)
+app.layout = html.Div(html.Img(src=app.get_asset_url(image_filename)))
 app.layout = html.Div(
     children=[
         html.H1(children="Mussels on Sylt",),
@@ -71,9 +77,6 @@ app.layout = html.Div(
         ),
         dcc.Graph(
             figure=figDist
-        ),
-        dcc.Graph(
-            figure=figKde
         ),
     ]
 )
